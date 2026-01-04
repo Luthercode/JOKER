@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickAPI - Documentação</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">QuickAPI</span>
+            </div>
+            <span class="version">v2.0</span>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <div class="nav-section">
+                <h3>Início</h3>
+                <a href="#overview" class="nav-item active">Visão Geral</a>
+                <a href="#authentication" class="nav-item">Autenticação</a>
+                <a href="#rate-limits" class="nav-item">Rate Limits</a>
+            </div>
+            
+            <div class="nav-section">
+                <h3>Endpoints</h3>
+                <a href="#users" class="nav-item">
+                    <span class="method get">GET</span> Usuários
+                </a>
+                <a href="#user-create" class="nav-item">
+                    <span class="method post">POST</span> Criar Usuário
+                </a>
+                <a href="#user-update" class="nav-item">
+                    <span class="method put">PUT</span> Atualizar
+                </a>
+                <a href="#user-delete" class="nav-item">
+                    <span class="method delete">DEL</span> Deletar
+                </a>
+            </div>
+            
+            <div class="nav-section">
+                <h3>Recursos</h3>
+                <a href="#products" class="nav-item">
+                    <span class="method get">GET</span> Produtos
+                </a>
+                <a href="#orders" class="nav-item">
+                    <span class="method get">GET</span> Pedidos
+                </a>
+            </div>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <a href="../../index.html" class="back-link">← Voltar ao Portfólio</a>
+        </div>
+    </aside>
+
+    <main class="content">
+        <header class="content-header">
+            <div class="search-box">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="m21 21-4.35-4.35"/>
+                </svg>
+                <input type="text" placeholder="Buscar na documentação..." id="searchInput">
+            </div>
+            <div class="header-actions">
+                <span class="status online">● API Online</span>
+                <button class="btn-theme" id="themeToggle">🌙</button>
+            </div>
+        </header>
+
+        <div class="content-body">
+            <!-- Overview Section -->
+            <section id="overview" class="doc-section">
+                <h1>Visão Geral</h1>
+                <p class="intro">QuickAPI é uma API RESTful de alta performance para gerenciamento de dados. Construída com Node.js, Express e MongoDB.</p>
+                
+                <div class="info-cards">
+                    <div class="info-card">
+                        <div class="info-icon">🚀</div>
+                        <h3>Alta Performance</h3>
+                        <p>Resposta média de 50ms</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">🔒</div>
+                        <h3>Seguro</h3>
+                        <p>JWT + Rate Limiting</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">📊</div>
+                        <h3>Escalável</h3>
+                        <p>100k+ requisições/min</p>
+                    </div>
+                </div>
+
+                <h2>Base URL</h2>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>Base URL</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+                    </div>
+                    <pre><code>https://api.quickapi.io/v2</code></pre>
+                </div>
+
+                <h2>Formato de Resposta</h2>
+                <p>Todas as respostas são retornadas em formato JSON:</p>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>JSON</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+                    </div>
+                    <pre><code>{
+    "success": true,
+    "data": { ... },
+    "meta": {
+        "page": 1,
+        "total": 100,
+        "per_page": 20
+    }
+}</code></pre>
+                </div>
+            </section>
+
+            <!-- Authentication Section -->
+            <section id="authentication" class="doc-section">
+                <h1>Autenticação</h1>
+                <p>A API utiliza autenticação via Bearer Token (JWT). Inclua o token no header de todas as requisições.</p>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>Header de Autenticação</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+                    </div>
+                    <pre><code>Authorization: Bearer seu_token_aqui</code></pre>
+                </div>
+
+                <h2>Obter Token</h2>
+                <div class="endpoint-card">
+                    <div class="endpoint-header">
+                        <span class="method post">POST</span>
+                        <span class="endpoint-url">/auth/login</span>
+                    </div>
+                    <div class="endpoint-body">
+                        <h4>Body Parameters</h4>
+                        <table class="params-table">
+                            <thead>
+                                <tr>
+                                    <th>Campo</th>
+                                    <th>Tipo</th>
+                                    <th>Descrição</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>email</code></td>
+                                    <td>string</td>
+                                    <td>Email do usuário</td>
+                                </tr>
+                                <tr>
+                                    <td><code>password</code></td>
+                                    <td>string</td>
+                                    <td>Senha do usuário</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="try-it-box">
+                    <h3>🧪 Testar Endpoint</h3>
+                    <div class="try-inputs">
+                        <input type="email" placeholder="email@exemplo.com" id="authEmail" value="demo@quickapi.io">
+                        <input type="password" placeholder="Senha" id="authPassword" value="demo123">
+                    </div>
+                    <button class="btn-try" onclick="testAuth()">Enviar Requisição</button>
+                    <div class="try-response" id="authResponse"></div>
+                </div>
+            </section>
+
+            <!-- Rate Limits Section -->
+            <section id="rate-limits" class="doc-section">
+                <h1>Rate Limits</h1>
+                <p>Para garantir a qualidade do serviço, aplicamos limites de requisições:</p>
+
+                <table class="params-table">
+                    <thead>
+                        <tr>
+                            <th>Plano</th>
+                            <th>Requisições/min</th>
+                            <th>Requisições/dia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Free</td>
+                            <td>60</td>
+                            <td>1.000</td>
+                        </tr>
+                        <tr>
+                            <td>Pro</td>
+                            <td>600</td>
+                            <td>50.000</td>
+                        </tr>
+                        <tr>
+                            <td>Enterprise</td>
+                            <td>Ilimitado</td>
+                            <td>Ilimitado</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="alert alert-warning">
+                    <strong>⚠️ Atenção:</strong> Ao exceder o limite, você receberá status 429 (Too Many Requests).
+                </div>
+            </section>
+
+            <!-- Users GET Section -->
+            <section id="users" class="doc-section">
+                <h1>Listar Usuários</h1>
+                <p>Retorna uma lista paginada de todos os usuários.</p>
+
+                <div class="endpoint-card">
+                    <div class="endpoint-header">
+                        <span class="method get">GET</span>
+                        <span class="endpoint-url">/users</span>
+                    </div>
+                    <div class="endpoint-body">
+                        <h4>Query Parameters</h4>
+                        <table class="params-table">
+                            <thead>
+                                <tr>
+                                    <th>Campo</th>
+                                    <th>Tipo</th>
+                                    <th>Descrição</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>page</code></td>
+                                    <td>integer</td>
+                                    <td>Número da página (default: 1)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>limit</code></td>
+                                    <td>integer</td>
+                                    <td>Itens por página (default: 20)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>search</code></td>
+                                    <td>string</td>
+                                    <td>Buscar por nome ou email</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="try-it-box">
+                    <h3>🧪 Testar Endpoint</h3>
+                    <div class="try-inputs">
+                        <input type="number" placeholder="Página" id="usersPage" value="1" min="1">
+                        <input type="number" placeholder="Limite" id="usersLimit" value="5" min="1" max="100">
+                    </div>
+                    <button class="btn-try" onclick="testGetUsers()">Enviar Requisição</button>
+                    <div class="try-response" id="usersResponse"></div>
+                </div>
+
+                <h2>Exemplo de Resposta</h2>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>200 OK</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+                    </div>
+                    <pre><code>{
+    "success": true,
+    "data": [
+        {
+            "id": "usr_abc123",
+            "name": "João Silva",
+            "email": "joao@email.com",
+            "role": "admin",
+            "created_at": "2026-01-01T10:00:00Z"
+        },
+        {
+            "id": "usr_def456",
+            "name": "Maria Santos",
+            "email": "maria@email.com",
+            "role": "user",
+            "created_at": "2026-01-02T14:30:00Z"
+        }
+    ],
+    "meta": {
+        "page": 1,
+        "total": 156,
+        "per_page": 20
+    }
+}</code></pre>
+                </div>
+            </section>
+
+            <!-- Users POST Section -->
+            <section id="user-create" class="doc-section">
+                <h1>Criar Usuário</h1>
+                <p>Cria um novo usuário no sistema.</p>
+
+                <div class="endpoint-card">
+                    <div class="endpoint-header">
+                        <span class="method post">POST</span>
+                        <span class="endpoint-url">/users</span>
+                    </div>
+                    <div class="endpoint-body">
+                        <h4>Body Parameters</h4>
+                        <table class="params-table">
+                            <thead>
+                                <tr>
+                                    <th>Campo</th>
+                                    <th>Tipo</th>
+                                    <th>Obrigatório</th>
+                                    <th>Descrição</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>name</code></td>
+                                    <td>string</td>
+                                    <td>✓</td>
+                                    <td>Nome completo</td>
+                                </tr>
+                                <tr>
+                                    <td><code>email</code></td>
+                                    <td>string</td>
+                                    <td>✓</td>
+                                    <td>Email válido e único</td>
+                                </tr>
+                                <tr>
+                                    <td><code>password</code></td>
+                                    <td>string</td>
+                                    <td>✓</td>
+                                    <td>Mínimo 8 caracteres</td>
+                                </tr>
+                                <tr>
+                                    <td><code>role</code></td>
+                                    <td>string</td>
+                                    <td></td>
+                                    <td>user | admin (default: user)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="try-it-box">
+                    <h3>🧪 Testar Endpoint</h3>
+                    <div class="try-inputs">
+                        <input type="text" placeholder="Nome" id="createName" value="Novo Usuário">
+                        <input type="email" placeholder="Email" id="createEmail" value="novo@email.com">
+                        <input type="password" placeholder="Senha" id="createPassword" value="senha123">
+                    </div>
+                    <button class="btn-try" onclick="testCreateUser()">Enviar Requisição</button>
+                    <div class="try-response" id="createResponse"></div>
+                </div>
+            </section>
+
+            <!-- Users PUT Section -->
+            <section id="user-update" class="doc-section">
+                <h1>Atualizar Usuário</h1>
+                <p>Atualiza os dados de um usuário existente.</p>
+
+                <div class="endpoint-card">
+                    <div class="endpoint-header">
+                        <span class="method put">PUT</span>
+                        <span class="endpoint-url">/users/:id</span>
+                    </div>
+                    <div class="endpoint-body">
+                        <h4>Path Parameters</h4>
+                        <table class="params-table">
+                            <thead>
+                                <tr>
+                                    <th>Campo</th>
+                                    <th>Tipo</th>
+                                    <th>Descrição</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>id</code></td>
+                                    <td>string</td>
+                                    <td>ID do usuário</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>Exemplo cURL</span>
+                        <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+                    </div>
+                    <pre><code>curl -X PUT https://api.quickapi.io/v2/users/usr_abc123 \
+  -H "Authorization: Bearer seu_token" \
+  -H "Content-Type: application/json" \
+  -d '{"name": "Nome Atualizado"}'</code></pre>
+                </div>
+            </section>
+
+            <!-- Users DELETE Section -->
+            <section id="user-delete" class="doc-section">
+                <h1>Deletar Usuário</h1>
+                <p>Remove permanentemente um usuário do sistema.</p>
+
+                <div class="endpoint-card">
+                    <div class="endpoint-header">
+                        <span class="method delete">DELETE</span>
+                        <span class="endpoint-url">/users/:id</span>
+                    </div>
+                </div>
+
+                <div class="alert alert-danger">
+                    <strong>⚠️ Cuidado:</strong> Esta ação é irreversível. Todos os dados do usuário serão permanentemente removidos.
+                </div>
+            </section>
+
+            <!-- Products Section -->
+            <section id="products" class="doc-section">
+                <h1>Listar Produtos</h1>
+                <p>Retorna uma lista de produtos cadastrados.</p>
+
+                <div class="endpoint-card">
+                    <div class="endpoint-header">
+                        <span class="method get">GET</span>
+                        <span class="endpoint-url">/products</span>
+                    </div>
+                </div>
+
+                <div class="try-it-box">
+                    <h3>🧪 Testar Endpoint</h3>
+                    <button class="btn-try" onclick="testGetProducts()">Enviar Requisição</button>
+                    <div class="try-response" id="productsResponse"></div>
+                </div>
+            </section>
+
+            <!-- Orders Section -->
+            <section id="orders" class="doc-section">
+                <h1>Listar Pedidos</h1>
+                <p>Retorna os pedidos do usuário autenticado.</p>
+
+                <div class="endpoint-card">
+                    <div class="endpoint-header">
+                        <span class="method get">GET</span>
+                        <span class="endpoint-url">/orders</span>
+                    </div>
+                </div>
+
+                <div class="try-it-box">
+                    <h3>🧪 Testar Endpoint</h3>
+                    <button class="btn-try" onclick="testGetOrders()">Enviar Requisição</button>
+                    <div class="try-response" id="ordersResponse"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

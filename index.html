@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Luther - Full-Stack Developer. Portfólio de projetos web, front-end e back-end.">
+    <meta name="author" content="Luther">
+    <meta name="theme-color" content="#0a0a0a">
+    
+    <title>Luther | Full-Stack Developer</title>
+    
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Creepster&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Cursor estilo carta/cruz -->
+    <div class="cursor-card">
+        <span class="cursor-symbol">✦</span>
+    </div>
+    <div class="cursor-trail"></div>
+
+    <!-- Loader com cartas em leque -->
+    <div class="loader">
+        <div class="loader-darkness"></div>
+        <div class="cards-fan">
+            <div class="fan-card fan-card-1">
+                <div class="card-face">
+                    <span class="card-corner-top">A<br>♠</span>
+                    <span class="card-center">♠</span>
+                    <span class="card-corner-bottom">A<br>♠</span>
+                </div>
+            </div>
+            <div class="fan-card fan-card-2">
+                <div class="card-face card-red">
+                    <span class="card-corner-top">K<br>♥</span>
+                    <span class="card-center">♥</span>
+                    <span class="card-corner-bottom">K<br>♥</span>
+                </div>
+            </div>
+            <div class="fan-card fan-card-3">
+                <div class="card-face">
+                    <span class="card-corner-top">Q<br>♣</span>
+                    <span class="card-center">♣</span>
+                    <span class="card-corner-bottom">Q<br>♣</span>
+                </div>
+            </div>
+            <div class="fan-card fan-card-4">
+                <div class="card-face card-red">
+                    <span class="card-corner-top">J<br>♦</span>
+                    <span class="card-center">♦</span>
+                    <span class="card-corner-bottom">J<br>♦</span>
+                </div>
+            </div>
+            <div class="fan-card fan-card-5 joker-card">
+                <div class="card-face card-joker">
+                    <span class="card-corner-top">★<br>J</span>
+                    <span class="joker-face">
+                        <svg class="joker-svg" viewBox="0 0 24 24" width="50" height="50">
+                            <path d="M12 2C9.5 2 7.5 4 7.5 6.5c0 1.5.7 2.8 1.8 3.7L8 14l-3 8h14l-3-8-1.3-3.8c1.1-.9 1.8-2.2 1.8-3.7C16.5 4 14.5 2 12 2z" fill="currentColor"/>
+                            <circle cx="10" cy="6" r="1.2" fill="#0a0a0a"/>
+                            <circle cx="14" cy="6" r="1.2" fill="#0a0a0a"/>
+                            <path d="M10 8.5c0 0 1 1.5 2 1.5s2-1.5 2-1.5" stroke="#0a0a0a" stroke-width="1" fill="none"/>
+                        </svg>
+                    </span>
+                    <span class="card-corner-bottom">★<br>J</span>
+                </div>
+            </div>
+        </div>
+        <div class="loader-text-container">
+            <span class="loader-glitch" data-text="LUTHER">LUTHER</span>
+            <span class="loader-subtitle">THE GAME BEGINS...</span>
+        </div>
+        <div class="smoke-effect">
+            <div class="smoke smoke-1"></div>
+            <div class="smoke smoke-2"></div>
+            <div class="smoke smoke-3"></div>
+        </div>
+    </div>
+
+    <!-- Efeitos de fundo globais -->
+    <div class="global-effects">
+        <div class="blood-drip drip-1"></div>
+        <div class="blood-drip drip-2"></div>
+        <div class="blood-drip drip-3"></div>
+        <div class="floating-symbols">
+            <span class="float-symbol fs-1">♠</span>
+            <span class="float-symbol fs-2">♦</span>
+            <span class="float-symbol fs-3">♣</span>
+            <span class="float-symbol fs-4">♥</span>
+            <span class="float-symbol fs-5">★</span>
+            <span class="float-symbol fs-6">♠</span>
+            <span class="float-symbol fs-7">♦</span>
+        </div>
+    </div>
+
+    <!-- Navegação -->
+    <nav class="nav">
+        <div class="nav-logo">
+            <span class="logo-symbol joker-rotate">
+                <svg class="joker-icon" viewBox="0 0 24 24" width="28" height="28">
+                    <path d="M12 2C9.5 2 7.5 4 7.5 6.5c0 1.5.7 2.8 1.8 3.7L8 14l-3 8h14l-3-8-1.3-3.8c1.1-.9 1.8-2.2 1.8-3.7C16.5 4 14.5 2 12 2z" fill="currentColor"/>
+                    <circle cx="10" cy="6" r="1" fill="#0a0a0a"/>
+                    <circle cx="14" cy="6" r="1" fill="#0a0a0a"/>
+                    <path d="M10 8.5c0 0 1 1.5 2 1.5s2-1.5 2-1.5" stroke="#0a0a0a" stroke-width="0.8" fill="none"/>
+                    <path d="M8 14l4 2 4-2" stroke="currentColor" stroke-width="1" fill="none"/>
+                </svg>
+            </span>
+            <span class="logo-text">LUTHER</span>
+        </div>
+        <div class="nav-menu">
+            <a href="#home" class="nav-link active" data-section="home">
+                <span class="link-card">♠</span>Home
+            </a>
+            <a href="#about" class="nav-link" data-section="about">
+                <span class="link-card">♦</span>Sobre
+            </a>
+            <a href="#skills" class="nav-link" data-section="skills">
+                <span class="link-card">♣</span>Skills
+            </a>
+            <a href="#projects" class="nav-link" data-section="projects">
+                <span class="link-card">♥</span>Projetos
+            </a>
+            <a href="#contact" class="nav-link" data-section="contact">
+                <span class="link-card">★</span>Contato
+            </a>
+        </div>
+        <button class="nav-toggle" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Menu Mobile -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-bg"></div>
+        <div class="mobile-cards-bg">
+            <span>♠</span><span>♦</span><span>♣</span><span>♥</span>
+        </div>
+        <div class="mobile-menu-content">
+            <a href="#home" class="mobile-link">
+                <span class="link-number">♠</span>
+                <span class="link-text">Home</span>
+            </a>
+            <a href="#about" class="mobile-link">
+                <span class="link-number">♦</span>
+                <span class="link-text">Sobre</span>
+            </a>
+            <a href="#skills" class="mobile-link">
+                <span class="link-number">♣</span>
+                <span class="link-text">Skills</span>
+            </a>
+            <a href="#projects" class="mobile-link">
+                <span class="link-number">♥</span>
+                <span class="link-text">Projetos</span>
+            </a>
+            <a href="#contact" class="mobile-link">
+                <span class="link-number">★</span>
+                <span class="link-text">Contato</span>
+            </a>
+        </div>
+        <div class="mobile-menu-footer">
+            <span class="joker-text">★ THE WILD CARD ★</span>
+        </div>
+    </div>
+
+    <!-- Indicador de progresso com efeito de sangue -->
+    <div class="scroll-progress"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-bg">
+                <div class="noise"></div>
+                <div class="dark-vignette"></div>
+                <div class="gradient-orb orb-1"></div>
+                <div class="gradient-orb orb-2"></div>
+                <div class="creepy-lines"></div>
+                <div class="floating-cards">
+                    <div class="float-card float-card-1">♠</div>
+                    <div class="float-card float-card-2">♦</div>
+                    <div class="float-card float-card-3">♣</div>
+                    <div class="float-card float-card-4">♥</div>
+                    <div class="float-card float-card-5">★</div>
+                </div>
+            </div>
+            
+            <div class="hero-content">
+                <div class="hero-card-reveal">
+                    <div class="reveal-card">
+                        <div class="reveal-front">?</div>
+                        <div class="reveal-back">♠</div>
+                    </div>
+                </div>
+                
+                <div class="hero-subtitle">
+                    <span class="line"></span>
+                    <span class="text glitch-text" data-text="Full-Stack Developer">Full-Stack Developer</span>
+                    <span class="line"></span>
+                </div>
+                
+                <h1 class="hero-title creepy-title">
+                    <span class="title-char" data-char="L">L</span>
+                    <span class="title-char" data-char="U">U</span>
+                    <span class="title-char" data-char="T">T</span>
+                    <span class="title-char" data-char="H">H</span>
+                    <span class="title-char" data-char="E">E</span>
+                    <span class="title-char" data-char="R">R</span>
+                </h1>
+                
+                <p class="hero-description">
+                    <span class="quote-dark">"</span>
+                    Onde <em class="blood-text">escuridão</em> encontra <em class="gold-text">criação</em>.
+                    <span class="quote-dark">"</span>
+                    <br>
+                    <span class="typed-text"></span><span class="typed-cursor">|</span>
+                </p>
+                
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary creepy-btn">
+                        <span class="btn-bg"></span>
+                        <span class="btn-text">Ver Projetos</span>
+                        <span class="btn-icon">♠</span>
+                    </a>
+                    <a href="#contact" class="btn btn-discord creepy-btn">
+                        <span class="btn-bg"></span>
+                        <svg class="discord-svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+                        </svg>
+                        <span class="btn-text">Discord</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-joker-corner">
+                <svg class="corner-joker-svg" viewBox="0 0 24 24" width="60" height="60">
+                    <path d="M12 2C9.5 2 7.5 4 7.5 6.5c0 1.5.7 2.8 1.8 3.7L8 14l-3 8h14l-3-8-1.3-3.8c1.1-.9 1.8-2.2 1.8-3.7C16.5 4 14.5 2 12 2z" fill="currentColor"/>
+                    <circle cx="10" cy="6" r="1" fill="#0a0a0a"/>
+                    <circle cx="14" cy="6" r="1" fill="#0a0a0a"/>
+                    <path d="M10 8.5c0 0 1 1.5 2 1.5s2-1.5 2-1.5" stroke="#0a0a0a" stroke-width="0.8" fill="none"/>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Sobre Section -->
+        <section id="about" class="about">
+            <div class="section-bg">
+                <div class="noise"></div>
+                <div class="dark-vignette"></div>
+            </div>
+            
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">♠</span>
+                    <h2 class="section-title creepy-section-title">
+                        <span class="title-decoration">♦</span>
+                        Sobre Mim
+                    </h2>
+                </div>
+
+                <div class="about-content">
+                    <div class="about-image">
+                        <div class="image-frame creepy-frame">
+                            <div class="frame-border"></div>
+                            <div class="frame-corner top-left">♠</div>
+                            <div class="frame-corner top-right">♦</div>
+                            <div class="frame-corner bottom-left">♣</div>
+                            <div class="frame-corner bottom-right">♥</div>
+                            <div class="image-placeholder">
+                                <div class="joker-card-display">
+                                    <div class="card-inner">
+                                        <div class="card-top-corner">J<br>★</div>
+                                        <div class="card-center-joker">
+                                            <svg class="joker-main-svg" viewBox="0 0 24 24" width="80" height="80">
+                                                <defs>
+                                                    <linearGradient id="jokerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                        <stop offset="0%" style="stop-color:#b22222"/>
+                                                        <stop offset="100%" style="stop-color:#8b0000"/>
+                                                    </linearGradient>
+                                                </defs>
+                                                <path d="M12 1C8.5 1 6 4 6 7c0 2 1 3.5 2.2 4.5L6.5 16 3 23h18l-3.5-7-1.7-4.5C17 10.5 18 9 18 7c0-3-2.5-6-6-6z" fill="url(#jokerGrad)"/>
+                                                <circle cx="9.5" cy="6.5" r="1.5" fill="#0a0a0a"/>
+                                                <circle cx="14.5" cy="6.5" r="1.5" fill="#0a0a0a"/>
+                                                <path d="M9 9.5c0 0 1.5 2 3 2s3-2 3-2" stroke="#0a0a0a" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+                                                <path d="M6.5 16l5.5 3 5.5-3" stroke="#fff" stroke-width="0.8" fill="none" opacity="0.5"/>
+                                            </svg>
+                                        </div>
+                                        <div class="card-letter">LUTHER</div>
+                                        <div class="card-bottom-corner">J<br>★</div>
+                                    </div>
+                                    <div class="card-glow"></div>
+                                </div>
+                            </div>
+                            <div class="frame-smoke"></div>
+                        </div>
+                        <div class="image-decoration">
+                            <span class="deco-text">THE WILD CARD</span>
+                        </div>
+                    </div>
+
+                    <div class="about-text">
+                        <p class="about-intro">
+                            Sou um desenvolvedor que vive nas <strong class="blood-text">sombras do código</strong>, 
+                            criando experiências digitais que transcendem o comum. Com expertise em 
+                            <strong>front-end</strong> e <strong>back-end</strong>, transformo 
+                            <em class="creepy-em">pesadelos</em> em realidade.
+                        </p>
+                        <div class="about-details">
+                            <div class="detail-item creepy-detail">
+                                <span class="detail-icon">★</span>
+                                <div class="detail-content">
+                                    <span class="detail-label">Especialização</span>
+                                    <span class="detail-value">Full-Stack Development</span>
+                                </div>
+                            </div>
+                            <div class="detail-item creepy-detail">
+                                <span class="detail-icon">♠</span>
+                                <div class="detail-content">
+                                    <span class="detail-label">Experiência</span>
+                                    <span class="detail-value">+5 Anos</span>
+                                </div>
+                            </div>
+                            <div class="detail-item creepy-detail">
+                                <span class="detail-icon">♦</span>
+                                <div class="detail-content">
+                                    <span class="detail-label">Localização</span>
+                                    <span class="detail-value">Brasil</span>
+                                </div>
+                            </div>
+                            <div class="detail-item creepy-detail">
+                                <span class="detail-icon">♣</span>
+                                <div class="detail-content">
+                                    <span class="detail-label">Foco</span>
+                                    <span class="detail-value">UI/UX & Performance</span>
+                                </div>
+                            </div>
+                        </div>
+                        <blockquote class="about-quote creepy-quote">
+                            <span class="quote-mark blood-text">"</span>
+                            Todo código conta uma história. As minhas são de <span class="blood-text">pesadelos</span>.
+                            <span class="quote-mark blood-text">"</span>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills">
+            <div class="section-bg">
+                <div class="noise"></div>
+                <div class="dark-vignette"></div>
+            </div>
+
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">♣</span>
+                    <h2 class="section-title creepy-section-title">
+                        <span class="title-decoration">♣</span>
+                        Tecnologias
+                    </h2>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-category creepy-card">
+                        <div class="category-header">
+                            <span class="category-icon">♠</span>
+                            <h3 class="category-title">Front-End</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item" data-skill="95">
+                                <div class="skill-info">
+                                    <span class="skill-name">HTML5 / CSS3</span>
+                                    <span class="skill-percent">95%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress blood-bar"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-skill="90">
+                                <div class="skill-info">
+                                    <span class="skill-name">JavaScript</span>
+                                    <span class="skill-percent">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress blood-bar"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-skill="85">
+                                <div class="skill-info">
+                                    <span class="skill-name">React / Vue</span>
+                                    <span class="skill-percent">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress blood-bar"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-skill="80">
+                                <div class="skill-info">
+                                    <span class="skill-name">TypeScript</span>
+                                    <span class="skill-percent">80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress blood-bar"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category creepy-card">
+                        <div class="category-header">
+                            <span class="category-icon">♦</span>
+                            <h3 class="category-title">Back-End</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item" data-skill="90">
+                                <div class="skill-info">
+                                    <span class="skill-name">Node.js</span>
+                                    <span class="skill-percent">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress blood-bar"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-skill="85">
+                                <div class="skill-info">
+                                    <span class="skill-name">Python</span>
+                                    <span class="skill-percent">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress blood-bar"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-skill="80">
+                                <div class="skill-info">
+                                    <span class="skill-name">PostgreSQL / MongoDB</span>
+                                    <span class="skill-percent">80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress blood-bar"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-skill="75">
+                                <div class="skill-info">
+                                    <span class="skill-name">GraphQL / REST</span>
+                                    <span class="skill-percent">75%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress blood-bar"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category creepy-card">
+                        <div class="category-header">
+                            <span class="category-icon">♣</span>
+                            <h3 class="category-title">Ferramentas</h3>
+                        </div>
+                        <div class="tools-grid">
+                            <div class="tool-item">
+                                <span class="tool-icon">⚙️</span>
+                                <span class="tool-name">Git</span>
+                            </div>
+                            <div class="tool-item">
+                                <span class="tool-icon">🐳</span>
+                                <span class="tool-name">Docker</span>
+                            </div>
+                            <div class="tool-item">
+                                <span class="tool-icon">☁️</span>
+                                <span class="tool-name">AWS</span>
+                            </div>
+                            <div class="tool-item">
+                                <span class="tool-icon">🔥</span>
+                                <span class="tool-name">Firebase</span>
+                            </div>
+                            <div class="tool-item">
+                                <span class="tool-icon">📐</span>
+                                <span class="tool-name">Figma</span>
+                            </div>
+                            <div class="tool-item">
+                                <span class="tool-icon">⚡</span>
+                                <span class="tool-name">Vite</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projetos Section -->
+        <section id="projects" class="projects">
+            <div class="section-bg">
+                <div class="noise"></div>
+                <div class="dark-vignette"></div>
+            </div>
+
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">♥</span>
+                    <h2 class="section-title creepy-section-title">
+                        <span class="title-decoration">♥</span>
+                        Projetos
+                    </h2>
+                </div>
+
+                <div class="projects-filter">
+                    <button class="filter-btn active" data-filter="all">
+                        <span class="filter-card">★</span>Todos
+                    </button>
+                    <button class="filter-btn" data-filter="frontend">
+                        <span class="filter-card">♠</span>Front-End
+                    </button>
+                    <button class="filter-btn" data-filter="backend">
+                        <span class="filter-card">♦</span>Back-End
+                    </button>
+                    <button class="filter-btn" data-filter="fullstack">
+                        <span class="filter-card">♣</span>Full-Stack
+                    </button>
+                </div>
+
+                <div class="projects-grid">
+                    <article class="project-card creepy-project" data-category="frontend">
+                        <div class="project-image">
+                            <div class="project-placeholder">
+                                <span class="project-icon">♠</span>
+                            </div>
+                            <div class="project-overlay">
+                                <button class="project-link" data-project="projects/dark-ui-kit/index.html" data-title="Starter UI Kit">
+                                    <span>Ver Projeto</span>
+                                    <span class="link-arrow">→</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">Front-End</span>
+                            <h3 class="project-title">Starter UI Kit</h3>
+                            <p class="project-description">Biblioteca de componentes reutilizáveis</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Styled</span>
+                                <span class="tech-tag">Motion</span>
+                            </div>
+                        </div>
+                        <div class="project-card-corner">♠</div>
+                    </article>
+
+                    <article class="project-card creepy-project" data-category="backend">
+                        <div class="project-image">
+                            <div class="project-placeholder">
+                                <span class="project-icon">♦</span>
+                            </div>
+                            <div class="project-overlay">
+                                <button class="project-link" data-project="projects/quickapi/index.html" data-title="QuickAPI">
+                                    <span>Ver Projeto</span>
+                                    <span class="link-arrow">→</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">Back-End</span>
+                            <h3 class="project-title">QuickAPI</h3>
+                            <p class="project-description">API RESTful de alta performance</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">Express</span>
+                                <span class="tech-tag">MongoDB</span>
+                            </div>
+                        </div>
+                        <div class="project-card-corner">♦</div>
+                    </article>
+
+                    <article class="project-card creepy-project" data-category="fullstack">
+                        <div class="project-image">
+                            <div class="project-placeholder">
+                                <span class="project-icon">♣</span>
+                            </div>
+                            <div class="project-overlay">
+                                <button class="project-link" data-project="projects/taskflow/index.html" data-title="TaskFlow">
+                                    <span>Ver Projeto</span>
+                                    <span class="link-arrow">→</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">Full-Stack</span>
+                            <h3 class="project-title">TaskFlow</h3>
+                            <p class="project-description">Dashboard completo com sistema de analytics</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Next.js</span>
+                                <span class="tech-tag">Prisma</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                            </div>
+                        </div>
+                        <div class="project-card-corner">♣</div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contato Section - Discord em vermelho -->
+        <section id="contact" class="contact">
+            <div class="section-bg">
+                <div class="noise"></div>
+                <div class="dark-vignette"></div>
+                <div class="blood-glow"></div>
+            </div>
+
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">★</span>
+                    <h2 class="section-title creepy-section-title">
+                        <span class="title-decoration">♠</span>
+                        Contato
+                    </h2>
+                    <p class="section-subtitle creepy-subtitle">Entre no jogo...</p>
+                </div>
+
+                <div class="contact-content">
+                    <div class="discord-card blood-discord">
+                        <div class="discord-bg blood-bg"></div>
+                        <div class="discord-flames">
+                            <div class="flame flame-1"></div>
+                            <div class="flame flame-2"></div>
+                            <div class="flame flame-3"></div>
+                        </div>
+                        <div class="discord-content">
+                            <div class="discord-icon blood-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+                                </svg>
+                            </div>
+                            <h3 class="discord-title blood-text">Me encontre no Discord</h3>
+                            <p class="discord-text">Quer entrar no jogo? Me adiciona!</p>
+                            <div class="discord-status">
+                                <span class="status-dot blood-dot"></span>
+                                <span class="status-text">Disponível para projetos</span>
+                            </div>
+                            <a href="https://discordapp.com/users/1150940661533638737" target="_blank" rel="noopener" class="discord-profile-btn">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+                                </svg>
+                                <span>Abrir Perfil</span>
+                            </a>
+                        </div>
+                        <div class="discord-cards blood-cards">
+                            <span>♠</span><span>♦</span><span>♣</span><span>♥</span><span>★</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Project Preview Modal -->
+    <div class="project-modal" id="projectModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-container">
+            <div class="modal-header">
+                <div class="modal-title-section">
+                    <span class="modal-icon">♠</span>
+                    <h3 class="modal-title" id="modalTitle">Projeto</h3>
+                </div>
+                <div class="modal-actions">
+                    <a href="#" class="modal-btn-external" id="openExternal" target="_blank" rel="noopener" title="Abrir em nova aba">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                            <polyline points="15 3 21 3 21 9"/>
+                            <line x1="10" y1="14" x2="21" y2="3"/>
+                        </svg>
+                    </a>
+                    <button class="modal-btn-close" id="closeModal" title="Fechar">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"/>
+                            <line x1="6" y1="6" x2="18" y2="18"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-loading" id="modalLoading">
+                    <div class="loading-spinner"></div>
+                    <span>Carregando projeto...</span>
+                </div>
+                <iframe class="project-iframe" id="projectIframe" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer creepy-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span class="logo-symbol">★</span>
+                <span class="logo-text">LUTHER</span>
+            </div>
+            <p class="footer-text">© 2026 Luther. All rights reserved in the shadows.</p>
+            <div class="footer-decoration">
+                <span class="footer-cards">♠ ♦ ♣ ♥ ★</span>
+                <span class="footer-quote">The Wild Card Always Wins</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

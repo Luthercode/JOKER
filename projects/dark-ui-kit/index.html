@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark UI Kit - Componentes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span class="brand-icon">◈</span>
+            <span class="brand-text">Dark UI Kit</span>
+        </div>
+        <div class="nav-links">
+            <a href="#buttons" class="nav-link">Buttons</a>
+            <a href="#cards" class="nav-link">Cards</a>
+            <a href="#inputs" class="nav-link">Inputs</a>
+            <a href="#alerts" class="nav-link">Alerts</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="hero">
+            <h1 class="hero-title">Dark UI Kit</h1>
+            <p class="hero-subtitle">Uma coleção de componentes modernos com tema escuro</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">24+</span>
+                    <span class="stat-label">Componentes</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Responsivo</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Dependências</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Buttons Section -->
+        <section id="buttons" class="section">
+            <h2 class="section-title">Buttons</h2>
+            <p class="section-desc">Botões com diferentes estilos e estados</p>
+            
+            <div class="component-grid">
+                <div class="component-card">
+                    <h3>Primary Buttons</h3>
+                    <div class="preview">
+                        <button class="btn btn-primary">Primary</button>
+                        <button class="btn btn-primary btn-outline">Outline</button>
+                        <button class="btn btn-primary" disabled>Disabled</button>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <h3>Secondary Buttons</h3>
+                    <div class="preview">
+                        <button class="btn btn-secondary">Secondary</button>
+                        <button class="btn btn-secondary btn-outline">Outline</button>
+                        <button class="btn btn-secondary btn-ghost">Ghost</button>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <h3>Status Buttons</h3>
+                    <div class="preview">
+                        <button class="btn btn-success">Success</button>
+                        <button class="btn btn-warning">Warning</button>
+                        <button class="btn btn-danger">Danger</button>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <h3>Button Sizes</h3>
+                    <div class="preview preview-align">
+                        <button class="btn btn-primary btn-sm">Small</button>
+                        <button class="btn btn-primary">Medium</button>
+                        <button class="btn btn-primary btn-lg">Large</button>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <h3>Icon Buttons</h3>
+                    <div class="preview">
+                        <button class="btn btn-primary btn-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 5v14M5 12h14"/>
+                            </svg>
+                            Add Item
+                        </button>
+                        <button class="btn btn-icon-only">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                            </svg>
+                        </button>
+                        <button class="btn btn-icon-only btn-round">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <h3>Loading Buttons</h3>
+                    <div class="preview">
+                        <button class="btn btn-primary btn-loading">
+                            <span class="spinner"></span>
+                            Loading...
+                        </button>
+                        <button class="btn btn-secondary btn-loading">
+                            <span class="spinner"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cards Section -->
+        <section id="cards" class="section">
+            <h2 class="section-title">Cards</h2>
+            <p class="section-desc">Cartões para exibir conteúdo organizado</p>
+            
+            <div class="component-grid">
+                <div class="component-card">
+                    <h3>Basic Card</h3>
+                    <div class="preview">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Card Title</h4>
+                            </div>
+                            <div class="card-body">
+                                <p>Este é um cartão básico com conteúdo simples.</p>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-primary btn-sm">Ação</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <h3>Image Card</h3>
+                    <div class="preview">
+                        <div class="card card-image">
+                            <div class="card-img">
+                                <div class="card-img-placeholder">
+                                    <span>🖼️</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <span class="card-tag">Featured</span>
+                                <h4>Projeto Incrível</h4>
+                                <p>Uma descrição breve do projeto.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <h3>Stats Card</h3>
+                    <div class="preview">
+                        <div class="card card-stats">
+                            <div class="stats-icon">📊</div>
+                            <div class="stats-content">
+                                <span class="stats-value">2,543</span>
+                                <span class="stats-label">Total Users</span>
+                                <span class="stats-change positive">+12.5%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <h3>Profile Card</h3>
+                    <div class="preview">
+                        <div class="card card-profile">
+                            <div class="profile-avatar">
+                                <span>JD</span>
+                            </div>
+                            <h4 class="profile-name">John Doe</h4>
+                            <p class="profile-role">Full-Stack Developer</p>
+                            <div class="profile-stats">
+                                <div><strong>142</strong><span>Projects</span></div>
+                                <div><strong>8.5k</strong><span>Followers</span></div>
+                            </div>
+                            <button class="btn btn-primary btn-sm">Follow</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Inputs Section -->
+        <section id="inputs" class="section">
+            <h2 class="section-title">Inputs</h2>
+            <p class="section-desc">Campos de formulário estilizados</p>
+            
+            <div class="component-grid">
+                <div class="component-card">
+                    <h3>Text Inputs</h3>
+                    <div class="preview preview-vertical">
+                        <div class="input-group">
+                            <label>Default Input</label>
+                            <input type="text" class="input" placeholder="Digite algo...">
+                        </div>
+                        <div class="input-group">
+                            <label>With Icon</label>
+                            <div class="input-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                                </svg>
+                                <input type="text" class="input" placeholder="Buscar...">
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>Disabled</label>
+                            <input type="text" class="input" placeholder="Desabilitado" disabled>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <h3>Input States</h3>
+                    <div class="preview preview-vertical">
+                        <div class="input-group">
+                            <label>Success</label>
+                            <input type="text" class="input input-success" value="Válido!">
+                            <span class="input-hint success">Perfeito!</span>
+                        </div>
+                        <div class="input-group">
+                            <label>Error</label>
+                            <input type="text" class="input input-error" value="Inválido">
+                            <span class="input-hint error">Este campo é obrigatório</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <h3>Select & Textarea</h3>
+                    <div class="preview preview-vertical">
+                        <div class="input-group">
+                            <label>Select</label>
+                            <select class="input select">
+                                <option>Selecione uma opção</option>
+                                <option>Opção 1</option>
+                                <option>Opção 2</option>
+                                <option>Opção 3</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Textarea</label>
+                            <textarea class="input textarea" placeholder="Sua mensagem..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <h3>Checkboxes & Radios</h3>
+                    <div class="preview preview-vertical">
+                        <label class="checkbox">
+                            <input type="checkbox" checked>
+                            <span class="checkmark"></span>
+                            Checkbox marcado
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            Checkbox desmarcado
+                        </label>
+                        <div class="radio-group">
+                            <label class="radio">
+                                <input type="radio" name="radio" checked>
+                                <span class="radiomark"></span>
+                                Opção A
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="radio">
+                                <span class="radiomark"></span>
+                                Opção B
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <h3>Toggle Switch</h3>
+                    <div class="preview preview-vertical">
+                        <label class="toggle">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                            <span class="toggle-label">Modo Escuro</span>
+                        </label>
+                        <label class="toggle">
+                            <input type="checkbox">
+                            <span class="toggle-slider"></span>
+                            <span class="toggle-label">Notificações</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <h3>Range Slider</h3>
+                    <div class="preview preview-vertical">
+                        <div class="input-group">
+                            <label>Volume: <span id="rangeValue">50</span>%</label>
+                            <input type="range" class="range-slider" value="50" min="0" max="100" oninput="document.getElementById('rangeValue').textContent = this.value">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Alerts Section -->
+        <section id="alerts" class="section">
+            <h2 class="section-title">Alerts & Notifications</h2>
+            <p class="section-desc">Mensagens de feedback para o usuário</p>
+            
+            <div class="component-grid component-grid-full">
+                <div class="component-card">
+                    <h3>Alert Types</h3>
+                    <div class="preview preview-vertical">
+                        <div class="alert alert-info">
+                            <span class="alert-icon">ℹ️</span>
+                            <div class="alert-content">
+                                <strong>Info:</strong> Esta é uma mensagem informativa.
+                            </div>
+                            <button class="alert-close">×</button>
+                        </div>
+                        <div class="alert alert-success">
+                            <span class="alert-icon">✅</span>
+                            <div class="alert-content">
+                                <strong>Sucesso:</strong> Operação realizada com sucesso!
+                            </div>
+                            <button class="alert-close">×</button>
+                        </div>
+                        <div class="alert alert-warning">
+                            <span class="alert-icon">⚠️</span>
+                            <div class="alert-content">
+                                <strong>Atenção:</strong> Verifique os dados antes de continuar.
+                            </div>
+                            <button class="alert-close">×</button>
+                        </div>
+                        <div class="alert alert-danger">
+                            <span class="alert-icon">❌</span>
+                            <div class="alert-content">
+                                <strong>Erro:</strong> Algo deu errado. Tente novamente.
+                            </div>
+                            <button class="alert-close">×</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <h3>Toast Notifications</h3>
+                    <div class="preview preview-vertical">
+                        <button class="btn btn-primary" onclick="showToast('success')">Success Toast</button>
+                        <button class="btn btn-warning" onclick="showToast('warning')">Warning Toast</button>
+                        <button class="btn btn-danger" onclick="showToast('error')">Error Toast</button>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <h3>Badges</h3>
+                    <div class="preview">
+                        <span class="badge">Default</span>
+                        <span class="badge badge-primary">Primary</span>
+                        <span class="badge badge-success">Success</span>
+                        <span class="badge badge-warning">Warning</span>
+                        <span class="badge badge-danger">Danger</span>
+                        <span class="badge badge-outline">Outline</span>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <h3>Progress Bars</h3>
+                    <div class="preview preview-vertical">
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 75%">
+                                <span>75%</span>
+                            </div>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar progress-success" style="width: 90%">
+                                <span>90%</span>
+                            </div>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar progress-warning" style="width: 45%">
+                                <span>45%</span>
+                            </div>
+                        </div>
+                        <div class="progress-container progress-animated">
+                            <div class="progress-bar" style="width: 60%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <h3>Skeleton Loading</h3>
+                    <div class="preview">
+                        <div class="skeleton-card">
+                            <div class="skeleton skeleton-avatar"></div>
+                            <div class="skeleton-content">
+                                <div class="skeleton skeleton-title"></div>
+                                <div class="skeleton skeleton-text"></div>
+                                <div class="skeleton skeleton-text short"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <h3>Tooltips</h3>
+                    <div class="preview">
+                        <button class="btn btn-secondary tooltip" data-tooltip="Tooltip em cima" data-position="top">Top</button>
+                        <button class="btn btn-secondary tooltip" data-tooltip="Tooltip à direita" data-position="right">Right</button>
+                        <button class="btn btn-secondary tooltip" data-tooltip="Tooltip embaixo" data-position="bottom">Bottom</button>
+                        <button class="btn btn-secondary tooltip" data-tooltip="Tooltip à esquerda" data-position="left">Left</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <footer class="footer">
+        <p>Dark UI Kit © 2026 - Feito por <a href="../index.html">Luther</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
